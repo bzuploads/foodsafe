@@ -1,9 +1,11 @@
+/* Reset styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Global styles */
 body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
@@ -17,30 +19,42 @@ body {
 }
 
 header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Center the content horizontally */
-  padding: 20px 0;
+  padding: 7px 0;
 }
 
-.logo {
-  font-size: 30px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px; /* Add some space below the title */
+.header-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  position: relative; /* Add this line */
 }
 
+.logo img {
+  max-width: 130px;
+  height: auto;
+  margin-right: 20px; /* Adjust this margin as needed */
+}
 
 nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 20px 0;
 }
 
+.menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
 
 .menu li {
-  display: inline-block;
   margin-left: 20px;
 }
 
@@ -119,4 +133,50 @@ footer {
 
 footer p {
   font-size: 14px;
+}
+
+
+.btn-login {
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 999;
+}
+
+.btn-login:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.logo {
+  margin-right: 20px; /* Add this line */
+}
+
+.menu {
+  margin-left: 100px; /* Adjusted to 100px */
+}
+
+
+/* Adjustments for responsiveness */
+@media screen and (max-width: 768px) {
+  .menu-container {
+    justify-content: flex-end; 
+  }
+
+  .menu {
+    margin-left: 20px; /* Adjusted for responsiveness */
+  }
+
+  .btn-login {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-left: 10px;
+  }
 }
